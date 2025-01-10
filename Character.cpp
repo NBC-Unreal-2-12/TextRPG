@@ -57,3 +57,6 @@ void Character::removeItemFromInventory(Item* item)
 {
 	inventory.removeItem(item);
 }
+void Character::displayInventory() {
+	inventory.listItem();
+}

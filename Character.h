@@ -17,12 +17,14 @@ private:
     int level;
     int helth;
     int maxHelth;
-    int attack;
+    int mp;
+	int maxMp;
+    double attack;
     int experience;
     int gold;
     int attackspeed;
-    int accuracy;
-    int evasion;
+    double accuracy;
+    double evasion;
     Job* job;
     bool isDead;
     static Character* instance;
@@ -38,6 +40,7 @@ public:
 	void useItem(Item* item);
 	void addItemToInventory(Item* item);
 	void removeItemFromInventory(Item* item);
+    void displayInventory();
 };
 
 #endif
