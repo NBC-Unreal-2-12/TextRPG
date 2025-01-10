@@ -15,8 +15,10 @@ public:
     virtual string getName() = 0;
     virtual int getHealth() = 0;
     virtual int getAttack() = 0;
+    virtual int getSkill() = 0;
     virtual void takeDamage(int damage) = 0;
     virtual bool isMonsterDie() = 0;
+
 };
 
 class Goblin : public Monster {
@@ -25,11 +27,12 @@ private:
     int health = 0;
     int attack = 0;
     int mana = 0;
+    int maxMana = 0;
     int accuracy = 0;
-    int avoid = 0;
+    float avoid = 0;
 
 public:
-    Goblin(int level) : health(level * 20), attack(level * 10), mana(3), accuracy(50 + (level * 20)), avoid(1 + (level * 0.05)) {}
+    Goblin(int level) : health(level * 20), attack(level * 10), mana(0), maxMana(3), accuracy(50 + (level * 20)), avoid(1 + (level * 0.05f)) {}
 
     string getName() override {
         return name;
@@ -40,7 +43,18 @@ public:
     }
 
     int getAttack() override {
-        return attack;
+        if (mana < maxMana) { // maxMana만큼 Attack
+            mana++; // 공격할 때 마다 마나++
+            return attack;
+        }
+        else {
+            mana = 0; // 마나 초기화
+            return getSkill(); // 스킬 호출
+        }
+    }
+
+    int getSkill() override {
+        return attack * 2;
     }
 
     bool isMonsterDie() override {
@@ -67,11 +81,12 @@ private:
     int health = 0;
     int attack = 0;
     int mana = 0;
+    int maxMana = 0;
     int accuracy = 0;
-    int avoid = 0;
+    float avoid = 0;
 
 public:
-    Orc(int level) : health(level * 20), attack(level * 10), mana(3), accuracy(50 + (level * 20)), avoid(1 + (level * 0.05)) {}
+    Orc(int level) : health(level * 20), attack(level * 10), mana(0), maxMana(3), accuracy(50 + (level * 20)), avoid(1 + (level * 0.05f)) {}
 
     string getName() override {
         return name;
@@ -82,7 +97,18 @@ public:
     }
 
     int getAttack() override {
-        return attack;
+        if (mana < maxMana) { // maxMana만큼 Attack
+            mana++; // 공격할 때 마다 마나++
+            return attack;
+        }
+        else {
+            mana = 0; // 마나 초기화
+            return getSkill(); // 스킬 호출
+        }
+    }
+
+    int getSkill() override {
+        return attack * 2;
     }
 
     bool isMonsterDie() override {
@@ -109,11 +135,12 @@ private:
     int health = 0;
     int attack = 0;
     int mana = 0;
+    int maxMana = 0;
     int accuracy = 0;
-    int avoid = 0;
+    float avoid = 0;
 
 public:
-    Slime(int level) : health(level * 20), attack(level * 10), mana(3), accuracy(50 + (level * 20)), avoid(1 + (level * 0.05)) {}
+    Slime(int level) : health(level * 20), attack(level * 10), mana(0), maxMana(3), accuracy(50 + (level * 20)), avoid(1 + (level * 0.05f)) {}
 
     string getName() override {
         return name;
@@ -124,7 +151,18 @@ public:
     }
 
     int getAttack() override {
-        return attack;
+        if (mana < maxMana) { // maxMana만큼 Attack
+            mana++; // 공격할 때 마다 마나++
+            return attack;
+        }
+        else {
+            mana = 0; // 마나 초기화
+            return getSkill(); // 스킬 호출
+        }
+    }
+
+    int getSkill() override {
+        return attack * 2;
     }
 
     bool isMonsterDie() override {
@@ -151,11 +189,12 @@ private:
     int health = 0;
     int attack = 0;
     int mana = 0;
+    int maxMana = 0;
     int accuracy = 0;
-    int avoid = 0;
+    float avoid = 0;
 
 public:
-    BossMonster(int level) : health(level * 20), attack(level * 10), mana(3), accuracy(50 + (level * 20)), avoid(1 + (level * 0.05)) {}
+    BossMonster(int level) : health(level * 20), attack(level * 10), mana(0), maxMana(3), accuracy(50 + (level * 20)), avoid(1 + (level * 0.05f)) {}
 
     string getName() override {
         return name;
@@ -166,7 +205,18 @@ public:
     }
 
     int getAttack() override {
-        return attack;
+        if (mana < maxMana) { // maxMana만큼 Attack
+            mana++; // 공격할 때 마다 마나++
+            return attack;
+        }
+        else {
+            mana = 0; // 마나 초기화
+            return getSkill(); // 스킬 호출
+        }
+    }
+
+    int getSkill() override {
+        return attack * 2;
     }
 
     bool isMonsterDie() override {
