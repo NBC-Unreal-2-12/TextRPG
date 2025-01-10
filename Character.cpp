@@ -10,6 +10,7 @@ Character::Character(string userName, Job* characterJob) : name(userName), job(c
 {
     characterJob->applyJobEffect(attack, maxHelth,attackspeed,evasion,accuracy,maxMp);
     helth = maxHelth;
+	mp = maxMp;
 }
 
 Character* Character::getInstance(string userName, Job* characterJob) {
@@ -24,9 +25,13 @@ void Character::displayStatus()
     cout << "현재 유저의 정보" << endl;
     cout << "레벨: " << level << endl;
     cout << "체력: " << helth << "/" << maxHelth << endl;
+    cout << "마나: " << mp << "/" << maxMp << endl;
     cout << "경험치: " << experience << endl;
     cout << "공격력: " << attack << endl;
     cout << "보유골드: " << gold << endl;
+	cout << "공격속도: " << attackspeed << endl;
+	cout << "명중률: " << accuracy << endl;
+	cout << "회피율: " << evasion << endl;
     cout << "직업: " << job->getJobName() << endl;
 }
 
