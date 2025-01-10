@@ -4,10 +4,6 @@
 
 using namespace std;
 
-class Item {
-
-};
-
 class Monster
 {
 	virtual string getName() = 0;
@@ -194,6 +190,8 @@ public:
 
 };
 
-int main() {
+//int main() {
+//}
 
-}
+//class Item {
+//};
