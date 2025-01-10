@@ -155,7 +155,7 @@ private:
     int avoid = 0;
 
 public:
-    Bossmonster(int level) : health(level * 20), attack(level * 10), mana(3), accuracy(50 + (level * 20)), avoid(1 + (level * 0.05)) {}
+    BossMonster(int level) : health(level * 20), attack(level * 10), mana(3), accuracy(50 + (level * 20)), avoid(1 + (level * 0.05)) {}
 
     string getName() override {
         return name;
