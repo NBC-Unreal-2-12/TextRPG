@@ -8,7 +8,6 @@
 #include "Character.h"
 #include "Shop.h"
 #include "Inventory.h"
-#include "Item.h"
 
 using namespace std;
 
@@ -75,6 +74,7 @@ public:
 	// 인벤토리 표시
 	void displayInventory(Inventory inventory)
 	{
+		Inventory inventory;
 		cout << "======현재 소지한 아이템======" << endl;
 		inventory.listItem();
 		cout << "==============================." << endl;
