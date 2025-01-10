@@ -4,7 +4,8 @@
 Shop::StockItem::StockItem(Item* _item, int _quantity) : item(_item), quantity(_quantity) {}
 
 // 상점 아이템 리스트 출력
-void Shop::displayItems() {
+void Shop::displayItems()
+{
 	std::cout << "\n======== ( Item Shop ) ========\n";
 	for (const auto& it : stock)
 	{
@@ -19,7 +20,8 @@ void Shop::displayItems() {
 }
 
 // 아이템 구매
-void Shop::buyItem(int index, Character* player) {
+void Shop::buyItem(int index, Character* player)
+{
 	// 아이템 유효성 검사
 	if (index < 0 || index >= static_cast<int>(stock.size()))
 	{
@@ -54,7 +56,8 @@ void Shop::buyItem(int index, Character* player) {
 }
 
 // 아이템 판매
-void Shop::sellItem(int index, Character* player) {
+void Shop::sellItem(int index, Character* player)
+{
 
 	// 인벤토리 내에서 아이템 찾기
 	Item* item = player->inventory.hasItem(index);

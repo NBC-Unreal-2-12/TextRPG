@@ -7,7 +7,8 @@
 
 class Shop {
 private:
-	struct StockItem {
+	struct StockItem
+	{
 		Item* item;   // 아이템 포인터
 		int quantity; // 재고 수량
 
